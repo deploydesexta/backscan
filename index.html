@@ -31,7 +31,7 @@
   <script>
     window.addEventListener("load", () => {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(sendLocation, handleError);
+        navigator.geolocation.getCurrentPosition(sendLocation, handleError, { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true });
       } else {
         alert("Algo deu errado. Tente novamente mais tarde.");
       }
